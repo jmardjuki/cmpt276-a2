@@ -35,8 +35,11 @@
 
 <div>
   <% @students.each do |student| %>
-  <% width = student.weight %>
-  <% height = student.height*2 %>
+  <%
+  if(student.height != nil && student.height != 0)
+    height = student.height*2
+  end
+  %>
   <div style="text-align: center; padding: 5px; display: inline-block; border: 1px solid black; width: <%= student.weight %>px ; height: <%= height %>px">
     <span style="color:<%= student.color %>"><%= student.name %></span>
       <br/>
