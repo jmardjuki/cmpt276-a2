@@ -30,12 +30,11 @@
 </table>
 
 <br/>
+<%= link_to '<span class="button-wrap"><button type="button" class="button button-pill"><i class="fa fa-plus"></i> Student</button><span>'.html_safe, new_student_path %>
 
-<%= link_to 'New Student', new_student_path %>
+<div style="clear:both; heigh: 1%"></div>
 
-<br/>
-
-<div>
+<div style="margin: 0 auto; display: flex;">
   <% @students.each do |student| %>
   <%
   if(student.weight != nil && student.weight != 0)
