@@ -16,12 +16,20 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.label :weight %><br>
+    <%= f.number_field :weight , :class => 'text_field', :step => 1 , :min => 0  %>
   </div>
   <div class="field">
-    <%= f.label :stock %><br>
-    <%= f.number_field :stock %>
+    <%= f.label :height %><br>
+    <%= f.number_field :height , :class => 'text_field', :step => 1 , :min => 0 %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :gpa %><br>
+    <%= f.number_field :gpa , :class => 'text_field', :step => 0.1 , :min => 0 %>
   </div>
   <div class="actions">
     <%= f.submit %>

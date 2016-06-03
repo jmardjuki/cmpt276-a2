@@ -2,10 +2,14 @@
 
 one:
   name: MyString
-  description: MyText
-  stock: 1
+  weight: 1
+  height: 1
+  color: MyString
+  gpa: 1.5
 
 two:
   name: MyString
-  description: MyText
-  stock: 1
+  weight: 1
+  height: 1
+  color: MyString
+  gpa: 1.5
