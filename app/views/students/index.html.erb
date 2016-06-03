@@ -29,18 +29,27 @@
   </tbody>
 </table>
 
-<br>
+<br/>
 
 <%= link_to 'New Student', new_student_path %>
+
+<br/>
 
 <div>
   <% @students.each do |student| %>
   <%
+  if(student.weight != nil && student.weight != 0)
+    width = student.weight*0.7
+  else
+    width = 0
+  end
   if(student.height != nil && student.height != 0)
-    height = student.height*2
+    height = student.height*2.5
+  else
+    height = 0
   end
   %>
-  <div style="text-align: center; padding: 5px; display: inline-block; border: 1px solid black; width: <%= student.weight %>px ; height: <%= height %>px">
+  <div style="text-align: center; padding: 5px; display: inline-block; border: 1px solid black; width: <%= width %>px ; height: <%= height %>px">
     <span style="color:<%= student.color %>"><%= student.name %></span>
       <br/>
     <span><%= student.gpa %></span>
