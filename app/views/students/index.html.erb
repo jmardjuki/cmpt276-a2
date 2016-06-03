@@ -21,39 +21,61 @@
         <td><%= student.height %></td>
         <td><%= student.color %></td>
         <td><%= student.gpa %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '<span class="glyphicon glyphicon-eye-open"></span> Show'.html_safe, student %></td>
+        <td><%= link_to '<span class="glyphicon glyphicon-pencil"></span> Edit'.html_safe, edit_student_path(student) %></td>
+        <td><%= link_to '<span class="glyphicon glyphicon-trash"></span> Delete'.html_safe, student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br/>
-<%= link_to '<span class="button-wrap"><button type="button" class="button button-pill"><i class="fa fa-plus"></i> Student</button><span>'.html_safe, new_student_path %>
+<%= link_to '<span class="button-wrap"><button type="button" class="button button-pill button-longshadow-right"><i class="fa fa-plus"></i> Student</button><span>'.html_safe, new_student_path %>
+<div style="clear:both; height: 5px"></div>
 
-<div style="clear:both; heigh: 1%"></div>
+<button type="button" class="button button-glow button-border button-rounded button-primary pull-right" data-toggle="modal" data-target="#thisDiagram"><span class="glyphicon glyphicon-fullscreen"></span> Display Diagram</button>
 
-<div style="margin: 0 auto; display: flex;">
-  <% @students.each do |student| %>
-  <%
-  if(student.weight != nil && student.weight != 0)
-    width = student.weight*0.7
-  else
-    width = 0
-  end
-  if(student.height != nil && student.height != 0)
-    height = student.height*2.5
-  else
-    height = 0
-  end
-  %>
-  <div style="text-align: center; padding: 5px; display: inline-block; border: 1px solid black; width: <%= width %>px ; height: <%= height %>px">
-    <span style="color:<%= student.color %>"><%= student.name %></span>
-      <br/>
-    <span><%= student.gpa %></span>
+<div class="modal fade" id="thisDiagram" role="dialog" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Student Diagram</h4>
+      </div>
+      <div class="modal-body">
+        <div style="margin: 0 auto; display: flex;">
+          <% @students.each do |student| %>
+          <%
+          if(student.weight != nil && student.weight != 0)
+            width = student.weight*0.7
+          else
+            width = 0
+          end
+          if(student.height != nil && student.height != 0)
+            height = student.height*2.5
+          else
+            height = 0
+          end
+          if(student.gpa != nil && student.gpa!= 0)
+            gpa = student.gpa*1.5
+          else
+            gpa = 0
+          end
+          %>
+          <div style="text-align: center; padding: 5px; display: inline-block; border: 1px solid black; margin: 10px; width: <%= width %>px ; height: <%= height %>px">
+            <span style="color:<%= student.color %>"><%= student.name %></span>
+              <br/>
+            <span><%= student.gpa %></span>
+            <br/>
+            <svg height="30" width="30">
+              <circle cx="15" cy="15" r="<%= gpa %>" fill="<%= student.color %>" />
+            </svg>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-  <% end %>
 </div>
 
 </div>

@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :gpa %><br>
-    <%= f.number_field :gpa , :class => 'text_field', :step => 0.1 , :min => 0 %>
+    <%= f.number_field :gpa , :class => 'text_field', :step => 0.01 , :min => 0, :max => 4.33 %>
   </div>
   <div class="actions">
     <%= f.submit %>
