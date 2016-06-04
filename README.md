@@ -14,3 +14,5 @@ EXTRA FEATURES: (outside basic features)
     Opens a boostrap modal box instead of crowding the whole page with the data, and diagram
 3. Displaying data
   - Added svg (vector) circle to display how high (big) the gpa of students. Filled with colour from the database.
+4. Extra information about each student
+  - Added BMI calculation for each student, rounded up to 2 decimal points. BMI is weight/height
