@@ -8,8 +8,8 @@ EXTRA FEATURES: (outside basic features)
 2. Layout/Design
   - Customize links into buttons with logo, which apparently not easy as adding button on a link tag on plain html.
     This allows me to learn how to actually use buttons within rails, also how to use oper source css button and icons library.
-    Button: https://github.com/alexwolfe/Buttons
-    Icons: http://getbootstrap.com/components/
+    * Button: https://github.com/alexwolfe/Buttons
+    * Icons: http://getbootstrap.com/components/
   - Displaying diagram
     Opens a boostrap modal box instead of crowding the whole page with the data, and diagram
 3. Displaying data
