@@ -1,6 +1,9 @@
 # cmpt276-a2
 Assignment2: Student Database Web Application
 
+Web app link:<br/>
+https://thawing-crag-75319.herokuapp.com/students
+
 EXTRA FEATURES: (outside basic features)
 
 1. Creating New Students or editing one
